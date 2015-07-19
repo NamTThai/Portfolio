@@ -12,12 +12,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-}
-
-.row-nowrap {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .col-1 {

@@ -13,6 +13,7 @@ body {
 .navigationbar-button {
     background: none;
     color: blue;
+    margin: 0;
 }
 
 @media only screen and (max-width: 480px) {
