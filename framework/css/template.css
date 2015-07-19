@@ -1,0 +1,6 @@
+.circle-image {
+    border: solid 2px white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
