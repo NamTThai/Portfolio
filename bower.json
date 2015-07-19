@@ -1,0 +1,27 @@
+{
+  "name": "Portfolio",
+  "version": "0.0.0",
+  "authors": [
+    "NamTThai <nam.thai.cs@gmail.com>"
+  ],
+  "description": "This is my personal portfolio",
+  "main": "index.html",
+  "keywords": [
+    "Nam",
+    "Thai",
+    "portfolio"
+  ],
+  "license": "MIT",
+  "homepage": "nthai.cs.trincoll.edu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.0.0",
+    "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.3"
+  }
+}
