@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
@@ -27,7 +26,7 @@
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
 </head>
 <body class="fullbleed layout vertical">
-    <paper-header-panel mode="waterfall" on-content-scroll="{{navigationbarScrollHandler}}">
+    <my-paper-header-panel>
         <paper-material id="navigationbar" class="paper-header" elevation="2">
             <nav id="navigationbar" class="row">
                 <paper-button class="navigationbar-button col-4">Features</paper-button>
@@ -77,23 +76,43 @@
                 <footer>This is my footer</footer>
             </div>
         </div>
-    </paper-header-panel>
-
-    <script>
-        document.addEventListener('WebComponentsReady', function() {
-            console.log("document ready");
-        });
-    </script>
-
-    <script>
-        Polymer ({
-            is: "custom-element",
-
-            navigationbarScrollHandler: function(event) {
-                var scroller = event.detail.target;
-                console.log(scroller.scrollTop);
-            }
-        });
-    </script>
+    </my-paper-header-panel>
 </body>
+
+<script>
+    document.addEventListener('WebComponentsReady', function() {
+    });
+</script>
+
+<dom-module id="my-paper-header-panel">
+    <template>
+        <paper-header-panel mode="waterfall" on-content-scroll="{{navigationbarScrollHandler}}">
+
+        </paper-header-panel>
+    </template>
+
+</dom-module>
+<script>
+(function() {
+    Polymer({
+        is: "my-paper-header-panel",
+        navigationbarScrollHandler: function(event) {
+            console.log("scrolling");
+            var scroller = event.detail.target;
+            console.log(scroller.scrollTop);
+        }
+    });
+});
+</script>
+
+// <script>
+//     var tmpNavigationbarScrollHandler = document.querySelector("#tmpNavigationbarScrollHandler");
+//     tmpNavigationbarScrollHandler.navigationbarScrollHandler = function(event) {
+//         var scroller = event.detail.target;
+//         console.log(scroller.scrollTop);
+//     }
+//
+//
+// </script>
+
 </html>
