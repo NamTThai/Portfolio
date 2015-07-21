@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
@@ -26,7 +27,8 @@
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
 </head>
 <body class="fullbleed layout vertical">
-    <my-paper-header-panel>
+    <paper-header-panel mode="waterfall" on-content-scroll="navigationBarScrollHandler">
+        <my-custom-element><my-custom-element>
         <paper-material id="navigationbar" class="paper-header" elevation="2">
             <nav id="navigationbar" class="row">
                 <paper-button class="navigationbar-button col-4">Features</paper-button>
@@ -34,17 +36,16 @@
                 <paper-button class="navigationbar-button col-4">Contact</paper-button>
             </nav>
             <header class="row">
-                <iron-image src="images/mini-profile.png" class="circle-image"
+                <iron-image id="profile-pict" src="images/mini-profile.png" class="circle-image"
                     style="background-color: lightgray" preload fade
                     width=100 height=100 sizing="contain"
                 ></iron-image>
                 <h1>TNT's Fun House</h1>
             </header>
-            <h2>May I have the pleasure?</h2>
+            <h2 id="header-subtitle">May I have the pleasure?</h2>
         </paper-material>
 
         <div class="content">
-
             <div class="grid">
                 <div class="row">
                     <header>Feature Works</header>
@@ -76,43 +77,24 @@
                 <footer>This is my footer</footer>
             </div>
         </div>
-    </my-paper-header-panel>
+    </paper-header-panel>
+
+    <dom-module id="my-custom-element">
+      <style>
+      </style>
+      <template>
+      </template>
+    </dom-module>
+    <script>
+    (function() {
+        Polymer ({
+          is: 'my-custom-element',
+            navigationbarScrollHandler: function(event) {
+                var scroller = event.detail.target;
+                console.log(scroller.scrollTop);
+            }
+        });
+    })();
+    </script>
 </body>
-
-<script>
-    document.addEventListener('WebComponentsReady', function() {
-    });
-</script>
-
-<dom-module id="my-paper-header-panel">
-    <template>
-        <paper-header-panel mode="waterfall" on-content-scroll="{{navigationbarScrollHandler}}">
-
-        </paper-header-panel>
-    </template>
-
-</dom-module>
-<script>
-(function() {
-    Polymer({
-        is: "my-paper-header-panel",
-        navigationbarScrollHandler: function(event) {
-            console.log("scrolling");
-            var scroller = event.detail.target;
-            console.log(scroller.scrollTop);
-        }
-    });
-});
-</script>
-
-// <script>
-//     var tmpNavigationbarScrollHandler = document.querySelector("#tmpNavigationbarScrollHandler");
-//     tmpNavigationbarScrollHandler.navigationbarScrollHandler = function(event) {
-//         var scroller = event.detail.target;
-//         console.log(scroller.scrollTop);
-//     }
-//
-//
-// </script>
-
 </html>
