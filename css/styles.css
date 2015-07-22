@@ -35,3 +35,22 @@ body {
 h1 {
   font-family: 'Pacifico', cursive;
 }
+
+/* Styling the main content */
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#fabContainer {
+  position: absolute;
+  width: 100%;
+}
+
+paper-fab {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  display: none;
+}

@@ -2,7 +2,7 @@
   'use strict';
 
   document.addEventListener('WebComponentsReady', function() {
-
+    
   });
 
   var eventListener = document.querySelector('#eventListener');
@@ -15,9 +15,11 @@
     if (scroller.scrollTop != 0) {
       $("#header-subtitle").hide();
       $("#profile-pict").width(50).height(50);
+      $("paper-fab").show();
     } else {
       $("#header-subtitle").show();
       $("#profile-pict").width(100).height(100);
+      $("paper-fab").hide();
     }
   }
 

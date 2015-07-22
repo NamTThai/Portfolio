@@ -4,8 +4,13 @@
   <title>Nam Thai's Fun House</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Script import -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <!-- Style imports -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="import" href="css/custom-style.html">
 
   <!-- Fonts -->
   <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
@@ -29,6 +34,7 @@
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
   <link rel="import" href="components/event-listener.html">
   <link rel="import" href="components/running-welcome-text.html">
+
 </head>
 <body class="fullbleed layout vertical">
   <template id="eventListener" is="dom-bind">
@@ -50,21 +56,17 @@
       </paper-material>
 
       <div id="portfolioContent" class="content">
-        <div class="grid">
-          <div class="row">
-            <header>Feature Works</header>
-          </div>
-          <div class="row">
-            <div class="col-4">
-              <img src="http://placekitten.com/g/600/300" alt="This is my feature works">
-            </div>
-            <div class="col-4">
-              <img src="http://placekitten.com/g/600/300" alt="This is my feature works">
-            </div>
-            <div class="col-4">
-              <img src="http://placekitten.com/g/600/300" alt="This is my feature works">
-            </div>
-          </div>
+        <div id="features">
+          <header>Feature Works</header>
+          <section id="gameSimulator">
+            <header>Game Simulator</header>
+          </section>
+          <section id="applicationDevelopment">
+            <header>Application Development</header>
+          </section>
+          <section id="academicResearch">
+            <header>Academic Research</header>
+          </section>
         </div>
         <div class="grid">
           <div class="row">
@@ -73,6 +75,8 @@
           <div class="col-12">
             <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
           </div>
+          <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
+          <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
         </div>
         <div class="row">
           <header>Contact</header>
@@ -82,7 +86,9 @@
         </div>
       </div>
     </paper-header-panel>
-    <paper-fab on-click="scrollToTop"></paper-fab>
+    <div id="fabContainer" class="content">
+      <paper-fab on-click="scrollToTop" class="green"></paper-fab>
+    </div>
   </template>
 </body>
 </html>
