@@ -2,36 +2,36 @@
 @import "../framework/css/template.css";
 
 body {
-    font-family: "proxima nova light", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+  font-family: "proxima nova light", "Helvetica Neue", Helvetica, Arial, Sans-serif;
 }
 
 /* Styling the navigationbar to match with device width */
 .navigationbar {
-    color: grey;
+  color: grey;
 }
 
 .navigationbar-button {
-    background: none;
-    color: blue;
-    margin: 0;
+  background: none;
+  color: blue;
+  margin: 0;
 }
 
 @media only screen and (max-width: 480px) {
-    #expand {
-        display: none;
-    }
+  #expand {
+    display: none;
+  }
 
-    #collapse {
-        display: block;
-    }
+  #collapse {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 481px) {
-    #collapse {
-        display: none;
-    }
+  #collapse {
+    display: none;
+  }
 }
 
 h1 {
-    font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive;
 }

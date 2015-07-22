@@ -1,0 +1,27 @@
+<script>
+  'use strict';
+
+  document.addEventListener('WebComponentsReady', function() {
+
+  });
+
+  var eventListener = document.querySelector('#eventListener');
+  eventListener.addEventListener('dom-change', function() {
+
+  });
+
+  eventListener.navigationbarScrollHandler = function(event) {
+    var scroller = event.detail.target;
+    if (scroller.scrollTop != 0) {
+      $("#header-subtitle").hide();
+      $("#profile-pict").width(50).height(50);
+    } else {
+      $("#header-subtitle").show();
+      $("#profile-pict").width(100).height(100);
+    }
+  }
+
+  eventListener.scrollToTop = function() {
+    $("paper-header-panel").animate({scrollTop: 0}, "slow");
+  }
+</script>
