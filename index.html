@@ -28,10 +28,11 @@
   <link rel="import" href="bower_components/paper-material/paper-material.html">
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
   <link rel="import" href="components/event-listener.html">
+  <link rel="import" href="components/running-welcome-text.html">
 </head>
 <body class="fullbleed layout vertical">
   <template id="eventListener" is="dom-bind">
-    <paper-header-panel mode="waterfall" on-content-scroll="navigationbarScrollHandler">
+    <paper-header-panel id="headerPanel" mode="waterfall" on-content-scroll="navigationbarScrollHandler">
       <paper-material id="navigationbar" class="paper-header" elevation="2">
         <nav id="navigationbar" class="row">
           <paper-button class="navigationbar-button col-4">Features</paper-button>
@@ -45,7 +46,7 @@
           ></iron-image>
           <h1>TNT's Fun House</h1>
         </header>
-        <h2 id="header-subtitle">May I have the pleasure?</h2>
+        <running-welcome-text id="header-subtitle" text="May I have the pleasure?"></running-welcome-text>
       </paper-material>
 
       <div id="portfolioContent" class="content">

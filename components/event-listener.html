@@ -22,6 +22,7 @@
   }
 
   eventListener.scrollToTop = function() {
-    $("paper-header-panel").animate({scrollTop: 0}, "slow");
+    var scroller = document.querySelector("#headerPanel").scroller;
+    $(scroller).animate({scrollTop: 0}, "slow");
   }
 </script>
