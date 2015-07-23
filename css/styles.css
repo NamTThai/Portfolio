@@ -43,10 +43,21 @@ h1 {
   white-space: nowrap;
 }
 
-.featureContent {
+.featureCard .featureContent {
   max-width: 250px;
   width: 100%;
   padding: 10px;
+}
+
+.featureCard > paper-fab {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  display: none;
+  position:absolute;
+  z-index: 1;
+  right: 10px;
+  top: 37px;
 }
 
 @media only screen and (max-width: 329px) {
@@ -54,6 +65,7 @@ h1 {
     margin: 10px;
     min-width: 100%;
     overflow: auto;
+    position: relative;
   }
 
   .featureCard > header {

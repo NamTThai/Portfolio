@@ -15,11 +15,11 @@
     if (scroller.scrollTop != 0) {
       $("#header-subtitle").hide();
       $("#profile-pict").width(50).height(50);
-      $("paper-fab").show();
+      $("#scrollToTop").show();
     } else {
       $("#header-subtitle").show();
       $("#profile-pict").width(100).height(100);
-      $("paper-fab").hide();
+      $("#scrollToTop").hide();
     }
   }
 
@@ -31,12 +31,20 @@
   eventListener.featureToggle = function(event) {
     var header = event.target.parentElement;
     var card = header.parentElement;
-    card.querySelector("iron-collapse").toggle();
+    var collapseContent = card.querySelector(".featureCollapse");
+    collapseContent.toggle();
 
-    var navFab = document.createElement("paper-fab");
-    console.log(navFab.width);
-    navFab.icon = "arrow-forward";
-    console.log(navFab.className);
-    card.appendChild(navFab);
+    // Animating the navigation Fab icon
+    if (collapseContent.opened) {
+      var navFab = document.createElement("paper-fab");
+      navFab.icon = "arrow-forward";
+      card.appendChild(navFab);
+      $(navFab).animate({opacity: "show"});
+    } else {
+      var navFab = card.querySelector("paper-fab");
+      $(navFab).animate({opacity: "hide"}, function() {
+        this.remove();
+      });
+    }
   }
 </script>
