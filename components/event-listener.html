@@ -39,10 +39,10 @@
       var navFab = document.createElement("paper-fab");
       navFab.icon = "arrow-forward";
       card.appendChild(navFab);
-      $(navFab).animate({opacity: "show"});
+      $(navFab).fadeIn();
     } else {
       var navFab = card.querySelector("paper-fab");
-      $(navFab).animate({opacity: "hide"}, function() {
+      $(navFab).fadeOut(function(){
         this.remove();
       });
     }
