@@ -7,11 +7,12 @@
 
   <!-- jquery import -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
   <!-- Style imports -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
   <link rel="import" href="css/custom-style.html">
 
   <!-- Fonts -->
@@ -49,14 +50,13 @@
           <paper-button class="navigationbar-button col-4">About</paper-button>
           <paper-button class="navigationbar-button col-4">Contact</paper-button>
         </nav>
-        <header class="row">
-          <iron-image id="profile-pict" src="images/mini-profile.png" class="circle-image"
-            style="background-color: lightgray" preload fade
-            width=100 height=100 sizing="contain"
-          ></iron-image>
-          <h1>TNT's Fun House</h1>
+        <header id="headerNavigation" class="row tallHeader">
+            <iron-image id="profilePict" src="images/mini-profile.png" class="circle-image tallHeader"
+              style="background-color: lightgray" preload fade sizing="contain"
+            ></iron-image>
+            <h1 class="tallHeader">TNT's Fun House</h1>
         </header>
-        <running-welcome-text id="header-subtitle" text="May I have the pleasure?"></running-welcome-text>
+        <running-welcome-text id="headerSubtitle" text="May I have the pleasure?"></running-welcome-text>
       </paper-material>
 
       <div id="portfolioContent" class="content">
