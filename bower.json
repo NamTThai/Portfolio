@@ -32,6 +32,7 @@
     "iron-image": "PolymerElements/iron-image#~1.0.2",
     "paper-header-panel": "PolymerElements/paper-header-panel#~1.0.3",
     "paper-fab": "PolymerElements/paper-fab#~1.0.3",
-    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#~1.0.4"
+    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#~1.0.4",
+    "paper-styles": "PolymerElements/paper-styles#~1.0.11"
   }
 }

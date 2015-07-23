@@ -2,7 +2,7 @@
   'use strict';
 
   document.addEventListener('WebComponentsReady', function() {
-    
+
   });
 
   var eventListener = document.querySelector('#eventListener');
@@ -26,5 +26,17 @@
   eventListener.scrollToTop = function() {
     var scroller = document.querySelector("#headerPanel").scroller;
     $(scroller).animate({scrollTop: 0}, "slow");
+  }
+
+  eventListener.featureToggle = function(event) {
+    var header = event.target.parentElement;
+    var card = header.parentElement;
+    card.querySelector("iron-collapse").toggle();
+
+    var navFab = document.createElement("paper-fab");
+    console.log(navFab.width);
+    navFab.icon = "arrow-forward";
+    console.log(navFab.className);
+    card.appendChild(navFab);
   }
 </script>

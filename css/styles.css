@@ -16,22 +16,6 @@ body {
   margin: 0;
 }
 
-@media only screen and (max-width: 480px) {
-  #expand {
-    display: none;
-  }
-
-  #collapse {
-    display: block;
-  }
-}
-
-@media only screen and (min-width: 481px) {
-  #collapse {
-    display: none;
-  }
-}
-
 h1 {
   font-family: 'Pacifico', cursive;
 }
@@ -43,12 +27,46 @@ h1 {
   margin: 0 auto;
 }
 
+.featureCard {
+  background: white;
+  margin: 20px;
+  border-radius: 2px;
+  min-width: 290px;
+}
+
+.featureCard > header {
+  padding: 14px 24px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.featureContent {
+  max-width: 250px;
+  width: 100%;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 329px) {
+  .featureCard {
+    margin: 10px;
+    min-width: 100%;
+    overflow: auto;
+  }
+
+  .featureCard > header {
+    white-space: normal;
+  }
+}
+
 #fabContainer {
   position: absolute;
   width: 100%;
 }
 
-paper-fab {
+#scrollToTop {
   position: absolute;
   bottom: 50px;
   right: 50px;
