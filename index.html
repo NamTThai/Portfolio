@@ -45,16 +45,24 @@
   <template id="eventListener" is="dom-bind">
     <paper-header-panel id="headerPanel" mode="waterfall" on-content-scroll="navigationbarScrollHandler">
       <paper-material id="navigationbar" class="paper-header" elevation="2">
-        <nav id="navigationbar" class="row">
-          <paper-button class="navigationbar-button col-4">Features</paper-button>
-          <paper-button class="navigationbar-button col-4">About</paper-button>
-          <paper-button class="navigationbar-button col-4">Contact</paper-button>
-        </nav>
         <header id="headerNavigation" class="row tallHeader">
             <iron-image id="profilePict" src="images/mini-profile.png" class="circle-image tallHeader"
               style="background-color: lightgray" preload fade sizing="contain"
             ></iron-image>
             <h1 class="tallHeader">TNT's Fun House</h1>
+            <span class="flex"></span>
+            <paper-button class="navigationbar-button" on-click="reroute">
+              features
+              <a href="#features"></a>
+            </paper-button>
+            <paper-button class="navigationbar-button" on-click="reroute">
+                about
+              <a href="#about"></a>
+            </paper-button>
+            <paper-button class="navigationbar-button" on-click="reroute">
+              contact
+              <a href="#contact"></a>
+            </paper-button>
         </header>
         <running-welcome-text id="headerSubtitle" text="May I have the pleasure?"></running-welcome-text>
       </paper-material>
@@ -98,20 +106,24 @@
             </paper-material>
           </content>
         </section>
-        <div class="grid">
-          <div class="row">
-            <header>About/Testimonials</header>
-          </div>
-          <div class="col-12">
+        <section id="about">
+          <div class="grid">
+            <div class="row">
+              <header>About/Testimonials</header>
+            </div>
+            <div class="col-12">
+              <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
+            </div>
+            <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
             <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
           </div>
-          <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
-          <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
-        </div>
-        <div class="row">
-          <header>Contact</header>
-        </div>
-        <div class="row">
+        </section>
+        <section id="contact">
+          <div class="row">
+            <header>Contact</header>
+          </div>
+        </section>
+        <div id="footer" class="row">
           <footer>This is my footer</footer>
         </div>
       </div>

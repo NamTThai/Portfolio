@@ -1,4 +1,5 @@
 <script>
+
   'use strict';
 
   document.addEventListener('WebComponentsReady', function() {
@@ -13,11 +14,11 @@
   eventListener.navigationbarScrollHandler = function(event) {
     var scroller = event.detail.target;
     if (scroller.scrollTop != 0) {
+      _colapseHeader();
       document.querySelector("#scrollToTop").style.display = "block";
-      document.querySelector("#headerNavigation").classList.remove("tallHeader");
     } else {
+      _expandHeader();
       document.querySelector("#scrollToTop").style.display = "none";
-      document.querySelector("#headerNavigation").classList.add("tallHeader");
     }
   }
 
@@ -45,4 +46,23 @@
       });
     }
   }
+
+  eventListener.reroute = function(event) {
+    var section = event.target.querySelector("a").hash;
+    _colapseHeader();
+    var scroller = document.querySelector("#headerPanel").scroller;
+    var currentScroll = $(String(section)).position().top;
+    var firstScroll = $("#features").position().top;
+    var scrollVal = currentScroll - firstScroll;
+    $(scroller).animate({scrollTop: scrollVal}, "slow");
+  }
+
+  function _colapseHeader() {
+    document.querySelector("#headerNavigation").classList.remove("tallHeader");
+  }
+
+  function _expandHeader() {
+    document.querySelector("#headerNavigation").classList.add("tallHeader");
+  }
+
 </script>
