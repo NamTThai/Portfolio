@@ -15,10 +15,10 @@
     var scroller = event.detail.target;
     if (scroller.scrollTop != 0) {
       _colapseHeader();
-      $("#scrollToTop").fadeIn();
+      document.querySelector("#scrollToTop").style.display = "block";
     } else {
       _expandHeader();
-      $("#scrollToTop").fadeOut();
+      document.querySelector("#scrollToTop").style.display = "none";
     }
   }
 

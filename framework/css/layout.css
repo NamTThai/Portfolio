@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.relative {
+  position: relative;
+}
+
 .row {
   width: 100%;
   display: flex;
