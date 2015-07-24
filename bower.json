@@ -33,6 +33,11 @@
     "paper-header-panel": "PolymerElements/paper-header-panel#~1.0.3",
     "paper-fab": "PolymerElements/paper-fab#~1.0.3",
     "iron-doc-viewer": "PolymerElements/iron-doc-viewer#~1.0.4",
-    "paper-styles": "PolymerElements/paper-styles#~1.0.11"
+    "paper-styles": "PolymerElements/paper-styles#~1.0.11",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#~1.0.3",
+    "paper-menu": "PolymerElements/paper-menu#~1.0.1",
+    "media-match": "~2.0.2",
+    "enquire": "~2.1.2",
+    "paper-item": "PolymerElements/paper-item#~1.0.2"
   }
 }

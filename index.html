@@ -22,6 +22,11 @@
   <!--  Load webcomponents-lite.min.js for polyfill support. -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
+  <!-- Import enquire for javascript responsive support -->
+  <script src="bower_components/media-match/media.match.min.js"></script>
+  <script src="bower_components/enquire/dist/enquire.min.js"></script>
+  <link rel="import" href="components/responsive.html">
+
   <!-- Normailze stylesheet for cross-browser support -->
   <link rel="stylesheet" src="http://normalize-css.googlecode.com/svn/trunk/normalize.css">
 
@@ -30,10 +35,14 @@
   <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="bower_components/iron-image/iron-image.html">
+  <link rel="import" href="bower_components/iron-media-query/iron-media-query.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
   <link rel="import" href="bower_components/paper-fab/paper-fab.html">
   <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+  <link rel="import" href="bower_components/paper-item/paper-item.html">
   <link rel="import" href="bower_components/paper-material/paper-material.html">
+  <link rel="import" href="bower_components/paper-menu/paper-menu.html">
   <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
   <link rel="import" href="bower_components/paper-styles/paper-styles.html">
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
@@ -43,9 +52,15 @@
 </head>
 <body class="fullbleed layout vertical">
   <template id="eventListener" is="dom-bind">
-    <paper-header-panel id="headerPanel" mode="waterfall" on-content-scroll="navigationbarScrollHandler">
-      <paper-material id="navigationbar" class="paper-header" elevation="2">
-        <header id="headerNavigation" class="row tallHeader">
+    <paper-drawer-panel id="mainDrawerPanel" force-narrow>
+      <paper-menu drawer selected="0">
+        <paper-item hash="#features" on-click="reroutePanel">Features</paper-item>
+        <paper-item hash="#about" on-click="reroutePanel">About</paper-item>
+        <paper-item hash="#contact" on-click="reroutePanel">Contact</paper-item>
+      </paper-menu>
+      <paper-header-panel main id="headerPanel" mode="waterfall" on-content-scroll="navigationbarScrollHandler">
+        <paper-material id="navigationbar" class="paper-header" elevation="2">
+          <header id="headerNavigation" class="row tallHeader">
             <iron-image id="profilePict" src="images/mini-profile.png" class="circle-image tallHeader"
               style="background-color: lightgray" preload fade sizing="contain"
             ></iron-image>
@@ -63,74 +78,75 @@
               contact
               <a ></a>
             </paper-button>
-        </header>
-        <running-welcome-text id="headerSubtitle" text="May I have the pleasure?"></running-welcome-text>
-      </paper-material>
+          </header>
+          <running-welcome-text id="headerSubtitle" text="May I have the pleasure?"></running-welcome-text>
+        </paper-material>
 
-      <div id="portfolioContent" class="content">
-        <section id="features">
-          <header>Feature Works</header>
-          <content class="row">
-            <paper-material elevation="1" class="featureCard">
-              <header class="featureHeader" on-click="featureToggle">
-                <paper-ripple></paper-ripple>
-                Game Simulator
-              </header>
-              <iron-collapse class="featureCollapse">
-                <div class="featureContent">
-                  <div>Sample Content</div>
-                </div>
-              </iron-collapse>
-            </paper-material>
-            <paper-material elevation="1" class="featureCard">
-              <header class="featureHeader" on-click="featureToggle">
-                <paper-ripple></paper-ripple>
-                Application Development
-              </header>
-              <iron-collapse class="featureCollapse">
-                <div class="featureContent">
-                  <div>Sample Content</div>
-                </div>
-              </iron-collapse>
-            </paper-material>
-            <paper-material elevation="1" class="featureCard">
-              <header class="featureHeader" on-click="featureToggle">
-                <paper-ripple></paper-ripple>
-                Academic Research
-              </header>
-              <iron-collapse class="featureCollapse">
-                <div class="featureContent">
-                  <div>Sample Content</div>
-                </div>
-              </iron-collapse>
-            </paper-material>
-          </content>
-        </section>
-        <section id="about">
-          <div class="grid">
-            <div class="row">
-              <header>About/Testimonials</header>
-            </div>
-            <div class="col-12">
+        <div id="portfolioContent" class="content">
+          <section id="features">
+            <header>Feature Works</header>
+            <content class="row">
+              <paper-material elevation="1" class="featureCard">
+                <header class="featureHeader" on-click="featureToggle">
+                  <paper-ripple></paper-ripple>
+                  Game Simulator
+                </header>
+                <iron-collapse class="featureCollapse">
+                  <div class="featureContent">
+                    <div>Sample Content</div>
+                  </div>
+                </iron-collapse>
+              </paper-material>
+              <paper-material elevation="1" class="featureCard">
+                <header class="featureHeader" on-click="featureToggle">
+                  <paper-ripple></paper-ripple>
+                  Application Development
+                </header>
+                <iron-collapse class="featureCollapse">
+                  <div class="featureContent">
+                    <div>Sample Content</div>
+                  </div>
+                </iron-collapse>
+              </paper-material>
+              <paper-material elevation="1" class="featureCard">
+                <header class="featureHeader" on-click="featureToggle">
+                  <paper-ripple></paper-ripple>
+                  Academic Research
+                </header>
+                <iron-collapse class="featureCollapse">
+                  <div class="featureContent">
+                    <div>Sample Content</div>
+                  </div>
+                </iron-collapse>
+              </paper-material>
+            </content>
+          </section>
+          <section id="about">
+            <div class="grid">
+              <div class="row">
+                <header>About/Testimonials</header>
+              </div>
+              <div class="col-12">
+                <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
+              </div>
+              <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
               <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
             </div>
-            <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
-            <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
+          </section>
+          <section id="contact">
+            <div class="row">
+              <header>Contact</header>
+            </div>
+          </section>
+          <div id="footer" class="row">
+            <footer>This is my footer</footer>
           </div>
-        </section>
-        <section id="contact">
-          <div class="row">
-            <header>Contact</header>
-          </div>
-        </section>
-        <div id="footer" class="row">
-          <footer>This is my footer</footer>
         </div>
+      </paper-header-panel>
+      <div id="fabContainer" class="content">
+        <paper-fab id="scrollToTop" on-click="scrollToTop" class="green" icon="expand-less"></paper-fab>
       </div>
-    </paper-header-panel>
-    <div id="fabContainer" class="content">
-      <paper-fab id="scrollToTop" on-click="scrollToTop" class="green" icon="expand-less"></paper-fab>
-    </div>
+    </paper-drawer-panel>
   </template>
 </body>
 </html>

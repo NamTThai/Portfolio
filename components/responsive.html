@@ -1,0 +1,17 @@
+<script>
+
+  'use strict';
+  document.addEventListener('WebComponentsReady', function() {
+    enquire.register("only screen and (max-width: 640px)", {
+      match: function() {
+        document.querySelector("#profilePict").setAttribute("paper-drawer-toggle", true);
+        $(".navigationbar-button").hide();
+      },
+      unmatch: function() {
+        document.querySelector("#profilePict").removeAttribute("paper-drawer-toggle");
+        $(".navigationbar-button").show();
+      }
+    }, true);
+  });
+
+</script>

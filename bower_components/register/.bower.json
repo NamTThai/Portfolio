@@ -1,0 +1,15 @@
+{
+  "name": "register",
+  "homepage": "https://github.com/bigeasy/register",
+  "version": "0.0.0",
+  "_release": "0.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.0",
+    "commit": "2c42c7e658000851f098c115ddae6196da890a5a"
+  },
+  "_source": "git://github.com/bigeasy/register.git",
+  "_target": "~0.0.0",
+  "_originalSource": "register",
+  "_direct": true
+}
