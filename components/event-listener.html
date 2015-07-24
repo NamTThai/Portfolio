@@ -48,13 +48,18 @@
   }
 
   eventListener.reroute = function(event) {
-    var section = event.target.querySelector("a").hash;
+    var section = event.target.parentNode.getAttribute("hash");
     _colapseHeader();
     var scroller = document.querySelector("#headerPanel").scroller;
     var currentScroll = $(String(section)).position().top;
     var firstScroll = $("#features").position().top;
     var scrollVal = currentScroll - firstScroll;
-    $(scroller).animate({scrollTop: scrollVal}, "slow");
+    $(scroller).animate({scrollTop: scrollVal}, {
+      easing: "swing",
+      done: function() {
+        window.location.hash = section;
+      }
+    });
   }
 
   function _colapseHeader() {
