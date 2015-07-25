@@ -19,6 +19,11 @@
   align-items: center;
 }
 
+.row.nowrap {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
 .flex {
   flex: 1;
 }

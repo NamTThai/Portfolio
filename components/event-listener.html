@@ -4,6 +4,13 @@
 
   document.addEventListener('WebComponentsReady', function() {
 
+    // Add event listener to galleryItems
+    $(".galleryItem").click(function(event) {
+      $("#headerGallery").fadeOut(function() {
+        $(this).attr("src", event.target.parentNode.src);
+        $(this).fadeIn();
+      });
+    });
   });
 
   var eventListener = document.querySelector('#eventListener');

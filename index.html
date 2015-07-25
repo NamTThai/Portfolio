@@ -15,8 +15,7 @@
   <link rel="import" href="css/custom-style.html">
 
   <!-- Fonts -->
-  <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
   <!--  Load webcomponents-lite.min.js for polyfill support. -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
@@ -62,24 +61,35 @@
       <section main class="relative">
         <paper-header-panel id="headerPanel" mode="waterfall" on-content-scroll="navigationbarScrollHandler">
           <paper-material id="navigationbar" class="paper-header" elevation="2">
-            <header id="headerNavigation" class="row tallHeader">
-              <iron-image id="profilePict" src="images/mini-profile.png" class="circle-image tallHeader"
-                style="background-color: lightgray" preload fade sizing="contain"
-              ></iron-image>
-              <h1 class="tallHeader">TNT's Fun House</h1>
-              <span class="flex"></span>
-              <paper-button class="navigationbar-button" on-click="reroute" hash="#features">
-                features
-                <a ></a>
-              </paper-button>
-              <paper-button class="navigationbar-button" on-click="reroute" hash="#about">
-                about
-                <a ></a>
-              </paper-button>
-              <paper-button class="navigationbar-button" on-click="reroute" hash="#contact">
-                contact
-                <a ></a>
-              </paper-button>
+            <header id="headerNavigation" class="tallHeader">
+              <iron-image id="headerGallery" src="images/gallery1.png" preload fade sizing="contain"></iron-image>
+              <div id="subHeaderNavigation" class="row">
+                <iron-image id="profilePict" src="images/mini-profile.png" class="circle-image"
+                  preload fade sizing="contain"></iron-image>
+                <h1>NAM THAI</h1>
+                <div class="row flex">
+                  <div id="galleryItems">
+                    <iron-image class="galleryItem" src="images/gallery1.png" preload fade sizing="cover"></iron-image>
+                    <iron-image class="galleryItem" src="images/gallery2.png" preload fade sizing="cover"></iron-image>
+                    <iron-image class="galleryItem" src="images/gallery3.png" preload fade sizing="cover"></iron-image>
+                    <iron-image class="galleryItem" src="images/gallery4.png" preload fade sizing="cover"></iron-image>
+                    <iron-image class="galleryItem" src="images/gallery5.png" preload fade sizing="cover"></iron-image>
+                    <iron-image class="galleryItem" src="images/gallery6.png" preload fade sizing="cover"></iron-image>
+                  </div>
+                </div>
+                <paper-button class="navigationbar-button" on-click="reroute" hash="#features">
+                  features
+                  <a ></a>
+                </paper-button>
+                <paper-button class="navigationbar-button" on-click="reroute" hash="#about">
+                  about
+                  <a ></a>
+                </paper-button>
+                <paper-button class="navigationbar-button" on-click="reroute" hash="#contact">
+                  contact
+                  <a ></a>
+                </paper-button>
+              </div>
             </header>
             <header id="welcome">
               <span id="runningWelcomeText"></span>
