@@ -6,6 +6,19 @@ body {
 }
 
 /* Styling the navigationbar to match with device width */
+#welcome {
+  height: 500px;
+  background-color: #085b10;
+  display: none;
+  z-index: 1;
+  align-items: center;
+  padding: 300px 100px 0 100px;
+}
+
+#welcome span {
+  color: white;
+  font-size: 2em;
+}
 
 .navigationbar-button {
   background: none;

@@ -31,6 +31,8 @@
   -webkit-transition-property: height;
   -o-transition-property: height;
   transition-property: height;
+  background-color: #085b10;
+  position: relative;
 }
 
 #headerNavigation #profilePict {
@@ -45,7 +47,7 @@
 }
 
 #headerNavigation.tallHeader {
-  height: 250px;
+  height: 500px;
 }
 
 #headerNavigation.tallHeader #profilePict {

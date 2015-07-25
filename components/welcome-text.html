@@ -11,6 +11,9 @@
   document.addEventListener('WebComponentsReady', function() {
     runningWelcomeText = $("#runningWelcomeText");
 
+    $("#headerNavigation").hide();
+    $("#welcome").show();
+
     var i = 0;
     $(runningWelcomeText).typed({
       strings: ["Hello! ^1000 Come on in! ^4000", "Welcome to my ^1000 uhm ^1000 ah ^4000",
@@ -40,7 +43,7 @@
   }
 
   function _onWelcomeEnd() {
-    $(cursor).remove();
+    _onWelcomeTerminated();
   }
 
   function _onWelcomeTerminated() {
@@ -50,6 +53,8 @@
     if ($(runningWelcomeText).length) {
       $(runningWelcomeText).remove();
     }
+    $("#welcome").remove();
+    $("#headerNavigation").fadeIn();
   }
 
 </script>
