@@ -38,6 +38,7 @@
     "paper-menu": "PolymerElements/paper-menu#~1.0.1",
     "media-match": "~2.0.2",
     "enquire": "~2.1.2",
-    "paper-item": "PolymerElements/paper-item#~1.0.2"
+    "paper-item": "PolymerElements/paper-item#~1.0.2",
+    "typed.js": "*"
   }
 }

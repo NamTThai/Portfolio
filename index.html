@@ -5,10 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- jquery import -->
+  <!-- Import various awesome support libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="bower_components/typed.js/dist/typed.min.js"></script>
 
   <!-- Style imports -->
   <link rel="stylesheet" href="css/styles.css">
@@ -25,7 +24,6 @@
   <!-- Import enquire for javascript responsive support -->
   <script src="bower_components/media-match/media.match.min.js"></script>
   <script src="bower_components/enquire/dist/enquire.min.js"></script>
-  <link rel="import" href="components/responsive.html">
 
   <!-- Normailze stylesheet for cross-browser support -->
   <link rel="stylesheet" src="http://normalize-css.googlecode.com/svn/trunk/normalize.css">
@@ -46,8 +44,11 @@
   <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
   <link rel="import" href="bower_components/paper-styles/paper-styles.html">
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+
+  <!-- Import my custom components -->
   <link rel="import" href="components/event-listener.html">
-  <link rel="import" href="components/running-welcome-text.html">
+  <link rel="import" href="components/responsive.html">
+  <link rel="import" href="components/welcome-text.html">
 
 </head>
 <body class="fullbleed layout vertical">
@@ -80,7 +81,7 @@
                 <a ></a>
               </paper-button>
             </header>
-            <running-welcome-text id="headerSubtitle" text="May I have the pleasure?"></running-welcome-text>
+            <span id="runningWelcomeText"></span>
           </paper-material>
 
           <div id="portfolioContent" class="content">

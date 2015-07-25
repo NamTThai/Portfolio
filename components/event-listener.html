@@ -12,6 +12,8 @@
   });
 
   eventListener.navigationbarScrollHandler = function(event) {
+    _onWelcomeTerminated();
+
     var scroller = event.detail.target;
     if (scroller.scrollTop != 0) {
       _colapseHeader();
