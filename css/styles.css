@@ -6,9 +6,13 @@ body {
 }
 
 /* Styling the navigationbar to match with device width */
+.paper-header {
+  background-color: #1B5E20;
+}
+
 #welcome {
   height: 500px;
-  background-color: #085b10;
+  background-color: #1B5E20;
   display: none;
   z-index: 1;
   align-items: center;
