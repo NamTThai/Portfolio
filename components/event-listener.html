@@ -74,7 +74,7 @@
   }
 
   function _expandHeader() {
-    if (!window.matchMedia("only screen and (max-width:640px)").matches) {
+    if (!window.matchMedia("only screen and (max-width:" + headerResponsiveScreenSize + ")").matches) {
       document.querySelector("#headerNavigation").classList.add("tallHeader");
     }
   }

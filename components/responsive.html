@@ -1,8 +1,9 @@
 <script>
 
   'use strict';
+
   document.addEventListener('WebComponentsReady', function() {
-    enquire.register("only screen and (max-width: 640px)", {
+    enquire.register("only screen and (max-width: " + headerResponsiveScreenSize + ")", {
       match: function() {
         document.querySelector("#profilePict").setAttribute("paper-drawer-toggle", true);
         $(".navigationbar-button").hide();
