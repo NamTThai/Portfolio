@@ -6,6 +6,7 @@
       match: function() {
         document.querySelector("#profilePict").setAttribute("paper-drawer-toggle", true);
         $(".navigationbar-button").hide();
+        _colapseHeader();
       },
       unmatch: function() {
         document.querySelector("#profilePict").removeAttribute("paper-drawer-toggle");

@@ -12,7 +12,7 @@
   });
 
   eventListener.navigationbarScrollHandler = function(event) {
-    _onWelcomeTerminated();
+    _onWelcomeEnd();
 
     var scroller = event.detail.target;
     if (scroller.scrollTop != 0) {
@@ -67,7 +67,9 @@
   }
 
   function _expandHeader() {
-    document.querySelector("#headerNavigation").classList.add("tallHeader");
+    if (!window.matchMedia("only screen and (max-width:640px)").matches) {
+      document.querySelector("#headerNavigation").classList.add("tallHeader");
+    }
   }
 
   function _scrollToSection(section) {
