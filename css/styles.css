@@ -101,6 +101,10 @@ body {
   margin: 0;
 }
 
+.navigationbar-button:hover {
+  color: #EEFF41;
+}
+
 /* Styling the main content */
 
 .content {
