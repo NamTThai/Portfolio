@@ -36,26 +36,6 @@
     $(scroller).animate({scrollTop: 0}, "slow");
   }
 
-  eventListener.featureToggle = function(event) {
-    var header = event.target.parentElement;
-    var card = header.parentElement;
-    var collapseContent = card.querySelector(".featureCollapse");
-    collapseContent.toggle();
-
-    // Animating the navigation Fab icon
-    if (collapseContent.opened) {
-      var navFab = document.createElement("paper-fab");
-      navFab.icon = "arrow-forward";
-      card.appendChild(navFab);
-      $(navFab).fadeIn();
-    } else {
-      var navFab = card.querySelector("paper-fab");
-      $(navFab).fadeOut(function(){
-        this.remove();
-      });
-    }
-  }
-
   eventListener.reroute = function(event) {
     _scrollToSection(event.target.parentNode.getAttribute("hash"));
   }
@@ -63,10 +43,6 @@
   eventListener.reroutePanel = function(event) {
     document.querySelector("#mainDrawerPanel").closeDrawer();
     _scrollToSection(event.target.getAttribute("hash"));
-  }
-
-  eventListener.triggerDrawer = function() {
-    console.log("toggle");
   }
 
   function _colapseHeader() {
@@ -83,7 +59,7 @@
     _colapseHeader();
     var scroller = document.querySelector("#headerPanel").scroller;
     var currentScroll = $(String(section)).position().top;
-    var firstScroll = $("#features").position().top;
+    var firstScroll = $("#bumper").position().top;
     var scrollVal = currentScroll - firstScroll;
     $(scroller).animate({scrollTop: scrollVal}, {
       easing: "swing",

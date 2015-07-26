@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Nam Thai's Fun House</title>
+  <title>Fun House</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,7 @@
 
   <!-- Import my custom components -->
   <link rel="import" href="components/event-listener.html">
+  <link rel="import" href="components/feature-work.html">
   <link rel="import" href="components/resource-num.html">
   <link rel="import" href="components/responsive.html">
   <link rel="import" href="components/welcome-text.html">
@@ -56,7 +57,7 @@
     <paper-drawer-panel id="mainDrawerPanel" force-narrow>
       <paper-menu drawer selected="0">
         <paper-item hash="#features" on-click="reroutePanel">Features</paper-item>
-        <paper-item hash="#about" on-click="reroutePanel">About</paper-item>
+        <paper-item hash="#about" on-click="reroutePanel">Testimonials</paper-item>
         <paper-item hash="#contact" on-click="reroutePanel">Contact</paper-item>
       </paper-menu>
       <section main class="relative">
@@ -83,7 +84,7 @@
                   <a ></a>
                 </paper-button>
                 <paper-button class="navigationbar-button" on-click="reroute" hash="#about">
-                  about
+                  testimonials
                   <a ></a>
                 </paper-button>
                 <paper-button class="navigationbar-button" on-click="reroute" hash="#contact">
@@ -98,31 +99,14 @@
           </paper-material>
 
           <div id="portfolioContent" class="content">
+            <section id="bumper"></section>
             <section id="features">
-              <header>Feature Works</header>
+              <h2>Feature Works</h2>
               <content class="row">
-                <paper-material elevation="1" class="featureCard">
-                  <header class="featureHeader" on-click="featureToggle">
-                    <paper-ripple></paper-ripple>
-                    Game Simulator
-                  </header>
-                  <iron-collapse class="featureCollapse">
-                    <div class="featureContent">
-                      <div>Sample Content</div>
-                    </div>
-                  </iron-collapse>
-                </paper-material>
-                <paper-material elevation="1" class="featureCard">
-                  <header class="featureHeader" on-click="featureToggle">
-                    <paper-ripple></paper-ripple>
-                    Application Development
-                  </header>
-                  <iron-collapse class="featureCollapse">
-                    <div class="featureContent">
-                      <div>Sample Content</div>
-                    </div>
-                  </iron-collapse>
-                </paper-material>
+                <feature-work>
+                  <div featureHeader>Game application</div>
+                  <div featureContent>Sample Content</div>
+                </feature-work>
                 <paper-material elevation="1" class="featureCard">
                   <header class="featureHeader" on-click="featureToggle">
                     <paper-ripple></paper-ripple>
@@ -139,7 +123,7 @@
             <section id="about">
               <div class="grid">
                 <div class="row">
-                  <header>About/Testimonials</header>
+                  <h2>Testimonials</h2>
                 </div>
                 <div class="col-12">
                   <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
@@ -150,7 +134,7 @@
             </section>
             <section id="contact">
               <div class="row">
-                <header>Contact</header>
+                <h2>Contact</h2>
               </div>
             </section>
             <div id="footer" class="row">

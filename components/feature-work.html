@@ -1,0 +1,105 @@
+<dom-module id="feature-work">
+  <style>
+    #card {
+      background: white;
+      margin: 20px;
+      border-radius: 2px;
+      min-width: 290px;
+      position: relative;
+    }
+
+    #card > header {
+      padding: 14px 24px;
+      border-bottom: 1px solid #e5e5e5;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    #collapse .content {
+      max-width: 250px;
+      width: 100%;
+      padding: 10px;
+    }
+
+    #card > paper-fab {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      display: none;
+      position: absolute;
+      z-index: 1;
+      right: 10px;
+      top: 37px;
+    }
+
+    @media only screen and (max-width: 329px) {
+      #card {
+        margin: 10px;
+        min-width: 100%;
+        overflow: auto;
+        position: relative;
+      }
+
+      #card > header {
+        white-space: normal;
+      }
+    }
+
+    #card > paper-fab {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      -o-transition-property: transform;
+      transition-property: transform;
+    }
+
+    #card > paper-fab:hover {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  </style>
+
+  <template>
+    <paper-material elevation="1" id="card">
+      <header on-click="toggleContent">
+        <paper-ripple></paper-ripple>
+        <content select="[featureHeader]"></content>
+      </header>
+      <iron-collapse id="collapse">
+        <div class="content">
+          <content select="[featureContent]"></content>
+        </div>
+      </iron-collapse>
+    </paper-material>
+  </template>
+
+</dom-module>
+
+<script>
+  Polymer({
+    is: "feature-work",
+
+    toggleContent: function() {
+      var collapseContent = this.$.collapse;
+      collapseContent.toggle();
+
+      // Animating the navigation Fab icon
+      if (collapseContent.opened) {
+        var navFab = document.createElement("paper-fab");
+        navFab.icon = "arrow-forward";
+        Polymer.dom(this.$.card).appendChild(navFab);
+        $(navFab).fadeIn();
+      } else {
+        var navFab = this.$$("paper-fab");
+        $(navFab).fadeOut(function(){
+          this.remove();
+        });
+      }
+    }
+  });
+</script>

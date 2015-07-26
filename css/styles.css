@@ -1,11 +1,11 @@
 @import "../framework/css/layout.css";
 @import "../framework/css/template.css";
 
+/* Styling the navigationbar to match with device width */
 body {
   font-family: 'Raleway', sans-serif;
 }
 
-/* Styling the navigationbar to match with device width */
 .paper-header {
   background-color: #1B5E20;
 }
@@ -110,52 +110,17 @@ body {
 .content {
   max-width: 1000px;
   margin: 0 auto;
+  font-weight: 200;
 }
 
-.featureCard {
-  background: white;
-  margin: 20px;
-  border-radius: 2px;
-  min-width: 290px;
-}
-
-.featureCard > header {
-  padding: 14px 24px;
-  border-bottom: 1px solid #e5e5e5;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 400;
-  white-space: nowrap;
-}
-
-.featureCard .featureContent {
-  max-width: 250px;
+#bumper {
   width: 100%;
-  padding: 10px;
 }
 
-.featureCard > paper-fab {
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  display: none;
-  position:absolute;
-  z-index: 1;
-  right: 10px;
-  top: 37px;
-}
-
-@media only screen and (max-width: 329px) {
-  .featureCard {
-    margin: 10px;
-    min-width: 100%;
-    overflow: auto;
-    position: relative;
-  }
-
-  .featureCard > header {
-    white-space: normal;
-  }
+#portfolioContent h2 {
+  margin: 50px 0px 30px 50px;
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 #fabContainer {
