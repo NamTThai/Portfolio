@@ -39,6 +39,7 @@
     "media-match": "~2.0.2",
     "enquire": "~2.1.2",
     "paper-item": "PolymerElements/paper-item#~1.0.2",
-    "typed.js": "*"
+    "typed.js": "*",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.3"
   }
 }

@@ -36,6 +36,10 @@
     $(scroller).animate({scrollTop: 0}, "slow");
   }
 
+  eventListener.showImage = function() {
+    console.log("showImage");
+  }
+
   eventListener.reroute = function(event) {
     _scrollToSection(event.target.parentNode.getAttribute("hash"));
   }

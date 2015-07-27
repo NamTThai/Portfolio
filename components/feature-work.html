@@ -5,22 +5,51 @@
       margin: 20px;
       border-radius: 2px;
       min-width: 290px;
+      max-width: 460px;
       position: relative;
     }
 
-    #card > header {
+    #card header {
       padding: 14px 24px;
       border-bottom: 1px solid #e5e5e5;
-      font-size: 20px;
+    }
+
+    #card header ::content #header {
+      font-size: 1.2em;
       line-height: 28px;
       font-weight: 400;
       white-space: nowrap;
     }
 
+    #card header ::content #subheader {
+      font-size: 0.9em;
+      font-style: italic;
+      font-weight: 300;
+      white-space: nowrap;
+      margin: 0;
+    }
+
     #collapse .content {
-      max-width: 250px;
       width: 100%;
-      padding: 10px;
+      padding: 25px 10px 10px 10px;
+    }
+
+    #collapse ::content iron-image {
+      display: block;
+      margin: 10px auto;
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      -o-transition-property: transform;
+      transition-property: transform;
+    }
+
+    #collapse ::content iron-image:hover {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
     }
 
     #card > paper-fab {
@@ -31,7 +60,7 @@
       position: absolute;
       z-index: 1;
       right: 10px;
-      top: 37px;
+      top: 54px;
     }
 
     @media only screen and (max-width: 329px) {
@@ -42,7 +71,11 @@
         position: relative;
       }
 
-      #card > header {
+      #card header ::content #header {
+        white-space: normal;
+      }
+
+      #card header ::content #subheader {
         white-space: normal;
       }
     }
@@ -62,19 +95,42 @@
       -o-transform: rotate(360deg);
       transform: rotate(360deg);
     }
+
+    #techs {
+      border-top: 1px solid lightgrey;
+    }
+
+    #techs > ::content .tag {
+      border: 1px solid lightgrey;
+      background-color: #64B5F6;
+      color: white;
+      padding: 0 5px;
+      margin: 5px;
+      border-radius: 5px;
+    }
   </style>
 
   <template>
     <paper-material elevation="1" id="card">
       <header on-click="toggleContent">
         <paper-ripple></paper-ripple>
-        <content select="[featureHeader]"></content>
+        <div id="header">
+          <content select="[featureHeader]"></content>
+        </div>
+        <div id="subheader">
+          <content select="[featureSubHeader]"></content>
+        </div>
       </header>
       <iron-collapse id="collapse">
-        <div class="content">
+        <iron-pages class="content" selected="0">
           <content select="[featureContent]"></content>
-        </div>
+        </iron-pages>
+        <section id="techs" class="row">
+          <iron-icon icon="label-outline"></iron-icon>
+          <content select="[featureTech]"></content>
+        </section>
       </iron-collapse>
+      <paper-fab icon="arrow-forward" on-click="nextPage"></paper-fab>
     </paper-material>
   </template>
 
@@ -89,17 +145,16 @@
       collapseContent.toggle();
 
       // Animating the navigation Fab icon
+      var navFab = this.$$("paper-fab");
       if (collapseContent.opened) {
-        var navFab = document.createElement("paper-fab");
-        navFab.icon = "arrow-forward";
-        Polymer.dom(this.$.card).appendChild(navFab);
         $(navFab).fadeIn();
       } else {
-        var navFab = this.$$("paper-fab");
-        $(navFab).fadeOut(function(){
-          this.remove();
-        });
+        $(navFab).fadeOut();
       }
+    },
+
+    nextPage: function() {
+      this.$$('iron-pages').selectNext();
     }
   });
 </script>
