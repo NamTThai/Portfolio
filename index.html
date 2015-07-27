@@ -50,6 +50,7 @@
   <link rel="import" href="components/feature-work.html">
   <link rel="import" href="components/resource-num.html">
   <link rel="import" href="components/responsive.html">
+  <link rel="import" href="components/testimonial-card.html">
   <link rel="import" href="components/welcome-text.html">
 
 </head>
@@ -103,7 +104,7 @@
             <section id="bumper"></section>
             <section id="features">
               <h2>Feature Works</h2>
-              <content class="row">
+              <content id="featuresWrapper" class="row">
                 <feature-work>
                   <div featureHeader>Showdown! on Android</div>
                   <div featureSubHeader>Android Full Stack Developer</div>
@@ -162,21 +163,18 @@
               </content>
             </section>
             <section id="about">
-              <div class="grid">
-                <div class="row">
-                  <h2>Testimonials</h2>
-                </div>
-                <div class="col-12">
-                  <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
-                </div>
-                <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
+              <h2>Testimonials</h2>
+              <testimonial-card title="Nam Thai" subtitle="Software Engineer" profilepict="images/about-namthai.png">
+                <div memo>Hello, please swipe right to see what my professors, coworkers and friends say about me!</div>
+                <div plus>These are things that I'm good at</div>
+                <div delta>These are things that I should improve upon</div>
+              </testimonial-card>
+              <div class="col-12">
                 <img src="http://placekitten.com/g/1200/300" alt="This is my testimonial cards">
               </div>
             </section>
             <section id="contact">
-              <div class="row">
-                <h2>Contact</h2>
-              </div>
+              <h2>Contact</h2>
             </section>
             <div id="footer" class="row">
               <footer>This is my footer</footer>
@@ -184,7 +182,7 @@
           </div>
         </paper-header-panel>
         <div id="fabContainer" class="content">
-          <paper-fab id="scrollToTop" on-click="scrollToTop" class="green" icon="expand-less"></paper-fab>
+          <paper-fab id="scrollToTop" on-click="scrollToTop" icon="expand-less"></paper-fab>
         </div>
       </section>
     </paper-drawer-panel>

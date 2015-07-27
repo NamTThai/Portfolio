@@ -1,0 +1,87 @@
+<dom-module id="testimonial-card">
+  <style>
+    #card {
+      margin: 20px auto;
+      border-radius: 2px;
+      max-width: 600px;
+    }
+
+    header {
+      border-bottom: 1px solid lightgrey;
+      padding: 5px;
+    }
+
+    #title {
+      font-size: 1.2em;
+      margin: 5px;
+    }
+
+    #subtitle {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    #about {
+      padding: 10px
+    }
+
+    #plus {
+      border-top: 1px solid lightgrey;
+      border-bottom: 1px solid lightgrey;
+      padding: 5px;
+    }
+
+    #delta {
+      padding: 5px;
+    }
+
+    #plus > ::content .tag {
+      border: 1px solid #01579B;
+      padding: 0 5px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    #delta > ::content .tag {
+      border: 1px solid #1B5E20;
+      padding: 0 5px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+  </style>
+
+  <template>
+    <paper-material elevation="2" id="card">
+      <header class="row">
+        <iron-image src="{{profilepict}}" class="circle-image" width="60" height="60" preload fade sizing="contain"></iron-image>
+        <div>
+          <div id="title">{{title}}</div>
+          <div id="subtitle">{{subtitle}}</div>
+        </div>
+      </header>
+      <section id="about">
+        <content select="[memo]"></content>
+      </section>
+      <section id="plus" class="row">
+        <iron-icon src="../images/testimonial-plus.png"></iron-icon>
+        <content select="[plus]"></content>
+      </section>
+      <section id="delta" class="row">
+        <iron-icon src="../images/testimonial-delta.png"></iron-icon>
+        <content select="[delta]"></content>
+      </section>
+    </paper-material>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: "testimonial-card",
+
+    properties: {
+      profilepict: String,
+      title: String,
+      subtitle: String
+    }
+  });
+</script>

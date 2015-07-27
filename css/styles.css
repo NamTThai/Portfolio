@@ -123,6 +123,10 @@ body {
   font-weight: 300;
 }
 
+#featuresWrapper {
+  align-items: baseline;
+}
+
 #fabContainer {
   position: absolute;
   width: 100%;
