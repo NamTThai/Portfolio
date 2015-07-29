@@ -84,7 +84,7 @@
 }
 
 #headerNavigation {
-  height: 100px;
+  height: 6em;
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
