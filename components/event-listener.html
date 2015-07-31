@@ -29,14 +29,19 @@
       var headerPanel = document.querySelector("#headerPanel");
       if ((headerPanel.scroller.scrollHeight + headerPanel.header.clientHeight) > document.body.clientHeight) {
         _expandHeader();
+        document.querySelector("#scrollToTop").style.display = "none";
       }
-      document.querySelector("#scrollToTop").style.display = "none";
     }
   }
 
   eventListener.scrollToTop = function() {
-    var scroller = document.querySelector("#headerPanel").scroller;
-    $(scroller).animate({scrollTop: 0}, "slow");
+    if ((headerPanel.scroller.scrollHeight + headerPanel.header.clientHeight) <= document.body.clientHeight) {
+      _expandHeader();
+      document.querySelector("#scrollToTop").style.display = "none";
+    } else {
+      var scroller = document.querySelector("#headerPanel").scroller;
+      $(scroller).animate({scrollTop: 0}, "slow");
+    }
   }
 
   eventListener.showImage = function() {
