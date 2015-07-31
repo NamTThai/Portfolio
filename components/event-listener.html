@@ -26,7 +26,10 @@
       _colapseHeader();
       document.querySelector("#scrollToTop").style.display = "block";
     } else {
-      _expandHeader();
+      var headerPanel = document.querySelector("#headerPanel");
+      if ((headerPanel.scroller.scrollHeight + headerPanel.header.clientHeight) > document.body.clientHeight) {
+        _expandHeader();
+      }
       document.querySelector("#scrollToTop").style.display = "none";
     }
   }
