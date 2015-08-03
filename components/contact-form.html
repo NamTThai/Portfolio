@@ -22,9 +22,13 @@
     }
 
     #resume {
-      font-size: 1.3em;
+      font-size: 1em;
       font-style: italic;
       display: none;
+    }
+
+    #emailIcon:hover {
+      cursor: pointer;
     }
 
     #contact {
@@ -32,25 +36,13 @@
     }
 
     .contact-item {
-      margin: 0 auto;
+      margin: auto;
       width: 32px;
       height: 32px;
     }
 
-    .blue {
-      color: blue;
-    }
-
-    .yellow {
-      color: yellow;
-    }
-
-    .lightblue {
-      background-color: ;
-    }
-
-    .pearl {
-      background-color: ;
+    paper-dialog {
+      max-height: 100%;
     }
   </style>
 
@@ -60,22 +52,31 @@
         <header state="header" on-click="changeHeader">
           <span id="header">Let's get in touch!</span>
           <span id="resume">Please email me for my resume :)</span>
-          <span id="contact" class="lightblue"></span>
           <paper-ripple></paper-ripple>
         </header>
-        <iron-icon icon="communication:phone" alt="phone" class="contact-item blue" on-click="showPhone">
+        <iron-icon data-dialog="modal" id="emailIcon" icon="communication:email" alt="email"
+          class="contact-item" on-click="showEmail">
           <paper-ripple></paper-ripple>
         </iron-icon>
-        <iron-icon icon="communication:email" alt="email" class="contact-item yellow" on-click="showEmail">
-          <paper-ripple></paper-ripple>
-        </iron-icon>
-        <a href="https://www.linkedin.com/in/namthai92" target="_blank">
-          <iron-icon src="../images/linkedin.png" alt="linkedin" class="contact-item">
+        <a href="https://github.com/NamTThai" class="contact-item" target="_blank">
+          <iron-icon src="../images/github.ico" class="contact-item" alt="github">
+            <paper-ripple></paper-ripple>
+          </iron-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/namthai92" class="contact-item" target="_blank">
+          <iron-icon src="../images/linkedin.png" class="contact-item" alt="linkedin">
             <paper-ripple></paper-ripple>
           </iron-icon>
         </a>
       </div>
     </paper-material>
+
+    <paper-dialog id="modal" modal>
+      <p>nam.thai.cs@gmail.com</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Copy to clipboard</paper-button>
+      </div>
+    </paper-dialog>
   </template>
 </dom-module>
 
@@ -84,36 +85,30 @@
     is: "contact-form",
 
     changeHeader: function(event) {
-      console.log(event.target);
-      var state = event.target.state;
+      var header = event.target.parentElement;
+      var state = header.getAttribute("state");
+      var headerTitle = this.$.header;
+      var resume = this.$.resume;
 
       if (state === "header") {
-        this.$.header.fadeOut();
-        this.$.resume.fadeIn();
+        $(headerTitle).fadeOut(function() {
+          $(resume).fadeIn();
+        });
+        header.setAttribute("state", "resume");
       } else {
-        if (state === "resume") {
-          this.$.resume.fadeOut();
-          this.$.header.fadeIn();
-        } else {
-          this.$.contact.fadeOut();
-          this.$.header.fadeIn();
-        }
+        $(resume).fadeOut(function() {
+          $(headerTitle).fadeIn();
+        });
+        header.setAttribute("state", "header");
       }
     },
 
-    showPhone: function() {
-      this.$.header.fadeOut();
-      this.$.contact.fadeIn();
-      this.$.contact.innerHtml="(203) 936 - 8794";
-      console.log(this.$.contact.classList);
-      this.$.contact.classList.removeClass("");
-    },
-
-    showEmail: function() {
-      this.$.header.fadeOut();
-      this.$.contact.fadeIn();
-      this.$.contact.innerHtml="nam.thai.cs@gmail.com";
-      this.$.contact.classList.addClass("pearl");
+    showEmail: function(event) {
+      var id = event.target.getAttribute('data-dialog');
+      var dialog = document.getElementById(id);
+      if (dialog) {
+        dialog.open();
+      }
     }
   });
 </script>

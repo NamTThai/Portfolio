@@ -34,6 +34,10 @@
     }
   }
 
+  eventListener.nextTestimonial = function(event) {
+    event.target.parentElement.selectNext();
+  }
+
   eventListener.scrollToTop = function() {
     if ((headerPanel.scroller.scrollHeight + headerPanel.header.clientHeight) <= document.body.clientHeight) {
       _expandHeader();
@@ -42,10 +46,6 @@
       var scroller = document.querySelector("#headerPanel").scroller;
       $(scroller).animate({scrollTop: 0}, "slow");
     }
-  }
-
-  eventListener.showImage = function() {
-    console.log("showImage");
   }
 
   eventListener.reroute = function(event) {
