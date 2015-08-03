@@ -87,17 +87,11 @@
     properties: {
       profilepict: String,
       title: String,
-      subtitle: String,
-      entryAnimations: {
-        value: 'scale-up-animations'
-      },
-      exitAnimations: {
-        value: 'fade-out-animations'
-      }
+      subtitle: String
     },
 
     nextItem: function() {
       this.fire('next-item', {bubbles: true});
-    }
+    },
   });
 </script>

@@ -35,7 +35,9 @@
   }
 
   eventListener.nextTestimonial = function(event) {
-    event.target.parentElement.selectNext();
+    event.target.slideOut();
+    var page = event.target.parentElement;
+    // page.selectNext();
   }
 
   eventListener.scrollToTop = function() {
