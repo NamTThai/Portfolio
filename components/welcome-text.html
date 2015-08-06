@@ -9,9 +9,7 @@
   var cursor;
 
   document.addEventListener('WebComponentsReady', function() {
-    if (window.matchMedia("only screen and (min-width: " + headerResponsiveScreenSize + ")").matches) {
-      _runWelcomeText();
-    }
+    _runWelcomeText();
   });
 
   function _changeCursorChar(newChar) {

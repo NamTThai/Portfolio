@@ -21,6 +21,21 @@ body {
   font-size: 2em;
 }
 
+.typed-cursor {
+  color: white;
+  font-size: 2em;
+}
+
+@media only screen and (max-width: 599px) {
+  #runningWelcomeText {
+    font-size: 1em;
+  }
+
+  .typed-cursor {
+    font-size: 1em;
+  }
+}
+
 #headerNavigation {
   position: relative;
 }
@@ -70,6 +85,22 @@ body {
   bottom: 0;
   padding: 1em;
   width: 100%;
+}
+
+@media only screen and (max-width: 599px) {
+
+  #headerNavigation.tallHeader .galleryItem {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    border: 2px solid white;
+    opacity: 0.5;
+  }
+
+  /* These buttons are on the left side drawer panel */
+  .navigationbar-button {
+    display: none;
+  }
 }
 
 #headerGallery {

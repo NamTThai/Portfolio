@@ -63,9 +63,7 @@
   }
 
   function _expandHeader() {
-    if (!window.matchMedia("only screen and (max-width:" + headerResponsiveScreenSize + ")").matches) {
-      document.querySelector("#headerNavigation").classList.add("tallHeader");
-    }
+    document.querySelector("#headerNavigation").classList.add("tallHeader");
   }
 
   function _scrollToSection(section) {
