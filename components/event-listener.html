@@ -7,7 +7,11 @@
     // Add event listener to galleryItems
     $(".galleryItem").click(function(event) {
       $("#headerGallery").fadeOut(function() {
-        $(this).attr("src", event.target.parentNode.src);
+        var src = event.target.parentNode.src;
+        if (!window.matchMedia("only screen and (min-width: " + headerResponsiveScreenSize + ")").matches) {
+          src = src.replace("-small", "");
+        }
+        $(this).attr("src", src);
         $(this).fadeIn();
       });
     });
