@@ -27,7 +27,7 @@
   <script src="bower_components/enquire/dist/enquire.min.js"></script>
 
   <!-- Normailze stylesheet for cross-browser support -->
-  <link rel="stylesheet" src="http://normalize-css.googlecode.com/svn/trunk/normalize.css">
+  <link rel="stylesheet" href="http://normalize-css.googlecode.com/svn/trunk/normalize.css">
 
   <!-- Import Polymer Components -->
   <link rel="import" href="bower_components/polymer/polymer.html">
@@ -76,7 +76,7 @@
               <div id="subHeaderNavigation" class="row">
                 <iron-image id="profilePict" src="images/mini-profile.png" class="circle-image"
                   preload fade sizing="contain"></iron-image>
-                <h1>NAM THAI</h1>
+                <h1 id="headerTitle">NAM THAI</h1>
                 <div class="row flex">
                   <div id="galleryItems">
                     <iron-image class="galleryItem" src="images/gallery1.png" preload fade sizing="cover"></iron-image>
@@ -109,7 +109,7 @@
           <div id="portfolioContent" class="content">
             <section id="bumper"></section>
             <section id="features">
-              <h2>Feature Works</h2>
+              <h2 class="portfolio-content-header">Feature Works</h2>
               <content id="featuresWrapper" class="row">
                 <feature-work>
                   <div featureHeader>Showdown! on Android</div>
@@ -169,7 +169,7 @@
               </content>
             </section>
             <section id="about">
-              <h2>Testimonials</h2>
+              <h2 class="portfolio-content-header">Testimonials</h2>
               <iron-pages selected="0" on-next-item="nextTestimonial">
                 <testimonial-card title="Nam Thai" subtitle="Software Engineer" profilepict="images/about-namthai.png">
                   <div memo>Hello, please tap the arrow to see what my professors, coworkers and friends say about me!</div>
@@ -184,7 +184,7 @@
               </iron-pages>
             </section>
             <section id="contact">
-              <h2>Contact</h2>
+              <h2 class="portfolio-content-header">Contact</h2>
               <contact-form></contact-form>
             </section>
             <section id="bumperBottom"></section>

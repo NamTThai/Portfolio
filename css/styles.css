@@ -4,19 +4,19 @@ body {
 }
 
 .paper-header {
-  background-color: #1B5E20;
+  background-color: #1b5e20;
 }
 
 #welcome {
   height: 500px;
-  background-color: #1B5E20;
+  background-color: #1b5e20;
   display: none;
   z-index: 1;
   align-items: center;
   padding: 300px 100px 0 100px;
 }
 
-#welcome span {
+#runningWelcomeText {
   color: white;
   font-size: 2em;
 }
@@ -26,14 +26,14 @@ body {
 }
 
 #headerNavigation.tallHeader {
-  background: linear-gradient(to right, #C5E1A5 , #33691E, #C5E1A5);
+  background: linear-gradient(to right, #c5e1a5 , #33691e, #c5e1a5);
 }
 
 #headerNavigation.tallHeader #profilePict {
   display: none;
 }
 
-#headerNavigation.tallHeader h1 {
+#headerNavigation.tallHeader #headerTitle {
   display: none;
 }
 
@@ -80,7 +80,7 @@ body {
   display: none;
 }
 
-#headerNavigation h1 {
+#headerTitle {
   color: white;
   margin-left: 1.2em;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .navigationbar-button:hover {
-  color: #EEFF41;
+  color: #eeff41;
 }
 
 /* Styling the main content */
@@ -121,7 +121,7 @@ body {
   display: none;
 }
 
-#portfolioContent h2 {
+.portfolio-content-header {
   margin: 0px 0px 0.5em 3em;
   padding-top: 1em;
   font-size: 1.5em;

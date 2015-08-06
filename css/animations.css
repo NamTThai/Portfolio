@@ -1,26 +1,28 @@
 .typed-cursor {
-    opacity: 1;
-    -webkit-animation: blink 2s infinite;
-    -moz-animation: blink 2s infinite;
-    animation: blink 2s infinite;
+  color: white;
+  font-size: 2em;
+  opacity: 1;
+  -webkit-animation: blink 2s infinite;
+  -moz-animation: blink 2s infinite;
+  animation: blink 2s infinite;
 }
 
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.6; }
-    100% { opacity: 1; }
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
 }
 
 @-webkit-keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.6; }
-    100% { opacity: 1; }
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
 }
 
 @-moz-keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.6; }
-    100% { opacity: 1; }
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
 }
 
 #headerNavigation.tallHeader .galleryItem {

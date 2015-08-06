@@ -9,19 +9,19 @@
       position: relative;
     }
 
-    #card header {
+    #cardHeader {
       padding: 1em 1.5em;
       border-bottom: 1px solid #e5e5e5;
     }
 
-    #card header ::content #header {
+    #cardHeader ::content #header {
       font-size: 1.2em;
       line-height: 1.6em;
       font-weight: 400;
       white-space: nowrap;
     }
 
-    #card header ::content #subheader {
+    #cardHeader ::content #subheader {
       font-size: 0.9em;
       font-style: italic;
       font-weight: 300;
@@ -52,7 +52,7 @@
       transform: scale(1.2);
     }
 
-    #card > paper-fab {
+    #nextPage {
       width: 3em;
       height: 3em;
       padding: 0.5em;
@@ -71,16 +71,16 @@
         position: relative;
       }
 
-      #card header ::content #header {
+      #header {
         white-space: normal;
       }
 
-      #card header ::content #subheader {
+      #subheader {
         white-space: normal;
       }
     }
 
-    #card > paper-fab {
+    #nextPage {
       -webkit-transition-duration: 0.3s;
       -o-transition-duration: 0.3s;
       transition-duration: 0.3s;
@@ -89,7 +89,7 @@
       transition-property: transform;
     }
 
-    #card > paper-fab:hover {
+    #nextPage:hover {
       -webkit-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
       -o-transform: rotate(360deg);
@@ -102,7 +102,7 @@
 
     #techs > ::content .tag {
       border: 1px solid lightgrey;
-      background-color: #64B5F6;
+      background-color: #64b5f6;
       color: white;
       padding: 0 0.3em;
       margin: 0.3em;
@@ -112,7 +112,7 @@
 
   <template>
     <paper-material elevation="1" id="card">
-      <header on-click="toggleContent">
+      <header id="cardHeader" on-click="toggleContent">
         <paper-ripple></paper-ripple>
         <div id="header">
           <content select="[featureHeader]"></content>
@@ -130,7 +130,7 @@
           <content select="[featureTech]"></content>
         </section>
       </iron-collapse>
-      <paper-fab icon="arrow-forward" on-click="nextPage"></paper-fab>
+      <paper-fab id="nextPage" icon="arrow-forward" on-click="nextPage"></paper-fab>
     </paper-material>
   </template>
 
